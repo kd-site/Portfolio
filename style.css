@@ -1,22 +1,29 @@
 /* --- 1. Variables & Base --- */
 :root {
-    --bg-main: #f9f7f2;      /* 明るく温かみのあるオフホワイト */
-    --bg-card: #ffffff;      /* カードは清潔感のある白 */
-    --text-main: #333333;    /* 深みのあるチャコールグレー */
-    --text-muted: #666666;   /* 補足用グレー */
-    --accent-color: #4a6741; /* 信頼感のあるモスグリーン */
-    --border: #e0ddd5;       /* 背景に馴染む境界線 */
+    --bg-main: #f9f7f2;
+    /* 明るく温かみのあるオフホワイト */
+    --bg-card: #ffffff;
+    /* カードは清潔感のある白 */
+    --text-main: #333333;
+    /* 深みのあるチャコールグレー */
+    --text-muted: #666666;
+    /* 補足用グレー */
+    --accent-color: #4a6741;
+    /* 信頼感のあるモスグリーン */
+    --border: #e0ddd5;
+    /* 背景に馴染む境界線 */
     --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html { 
-    scroll-behavior: smooth; /* スムーズスクロールを有効化 */
+html {
+    scroll-behavior: smooth;
+    /* スムーズスクロールを有効化 */
 }
 
 body {
@@ -36,8 +43,15 @@ body {
 
 /* --- 2. Animations --- */
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- 3. Header --- */
@@ -59,65 +73,90 @@ body {
     align-items: center;
 }
 
-.logo { font-size: 1rem; font-weight: 700; letter-spacing: 0.2em; }
-.nav ul { display: flex; list-style: none; gap: 40px; }
-.nav a { 
-    text-decoration: none; 
-    color: var(--text-main); 
-    font-size: 0.85rem; 
-    transition: color 0.3s ease; 
+.logo {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
 }
-.nav a:hover { color: var(--accent-color); }
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
 
 /* --- 4. Section General --- */
-.section { 
-    padding: 120px 0; 
-    border-bottom: 1px solid var(--border); 
+.section {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border);
 }
 
 .section-title {
-    font-size: 1.6rem; 
-    text-align: center; 
+    font-size: 1.6rem;
+    text-align: center;
     margin-bottom: 80px;
-    letter-spacing: 0.1em; 
+    letter-spacing: 0.1em;
     font-weight: 500;
 }
 
 /* --- 5. Profile --- */
 .profile-flex {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     gap: 80px;
     animation: fadeInUp 1.2s var(--ease-expo) both;
 }
 
 .profile-image {
-    flex: 0 0 400px; 
+    flex: 0 0 400px;
     height: 500px;
-    background-color: #ddd; 
+    background-color: #ddd;
     border-radius: 2px;
     overflow: hidden;
     border: 1px solid var(--border);
 }
 
 .profile-image img {
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.6s var(--ease-expo);
 }
 
-.profile-image:hover img { 
-    transform: scale(1.05); 
+.profile-image:hover img {
+    transform: scale(1.05);
 }
 
 .label {
-    display: block; font-size: 0.75rem; letter-spacing: 0.3em;
-    color: var(--accent-color); margin-bottom: 20px; font-weight: 700;
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-h2 { font-size: 2.6rem; font-weight: 500; line-height: 1.3; margin-bottom: 30px; }
-.highlight { color: var(--accent-color); }
+h2 {
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.highlight {
+    color: var(--accent-color);
+}
 
 /* --- 6. Skills (Image Style) --- */
 .skills-grid {
@@ -144,59 +183,76 @@ h2 { font-size: 2.6rem; font-weight: 500; line-height: 1.3; margin-bottom: 30px;
 }
 
 .skill-content h4 {
-    font-size: 1.3rem; 
-    margin-bottom: 20px; 
+    font-size: 1.3rem;
+    margin-bottom: 20px;
     font-weight: 500;
 }
 
 .skill-content p {
-    font-size: 0.95rem; 
+    font-size: 0.95rem;
     color: var(--text-muted);
+}
+
+.skill-content .fa-solid {
+    font-size: 80px;
 }
 
 /* スキルカード内のテキストスタイル修正 */
 .skill-content p {
     line-height: 1.6;
-    color: #333; /* 全体のテキストカラー（任意で調整） */
+    color: #333;
+    /* 全体のテキストカラー（任意で調整） */
 }
 
 /* スキルリスト（最初の1行）の強調スタイル */
-.skill-content p b, 
+.skill-content p b,
 .skill-content p strong {
-    display: block;      /* 改行させる */
-    font-size: 1.15rem;  /* 少し大きく（標準が1remの場合） */
-    color: #2c3e50;      /* 信頼感のある濃いめの色に変更 */
-    font-weight: 700;    /* しっかり太く */
-    margin-bottom: 8px;  /* 下の説明文との間隔 */
+    display: block;
+    /* 改行させる */
+    font-size: 1.15rem;
+    /* 少し大きく（標準が1remの場合） */
+    color: #2c3e50;
+    /* 信頼感のある濃いめの色に変更 */
+    font-weight: 700;
+    /* しっかり太く */
+    margin-bottom: 8px;
+    /* 下の説明文との間隔 */
 }
 
 /* --- 7. Timeline --- */
-.timeline { 
-    max-width: 800px; 
-    margin: 0 auto; 
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .timeline-item {
-    display: flex; 
-    padding: 40px 0; 
+    display: flex;
+    padding: 40px 0;
     border-bottom: 1px dotted var(--border);
 }
 
-.time { 
-    flex: 0 0 180px; 
-    font-weight: 700; 
-    color: var(--accent-color); 
+.time {
+    flex: 0 0 180px;
+    font-weight: 700;
+    color: var(--accent-color);
 }
 
-.desc h4 { font-size: 1.1rem; margin-bottom: 10px; }
-.desc p { font-size: 0.95rem; color: var(--text-muted); }
+.desc h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.desc p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
 
 /* --- 8. Footer --- */
-.footer { 
-    padding: 80px 0; 
-    text-align: center; 
-    font-size: 0.75rem; 
-    color: #999; 
+.footer {
+    padding: 80px 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #999;
 }
 
 /* --- 9. Top Scroll Button --- */
@@ -230,13 +286,49 @@ h2 { font-size: 2.6rem; font-weight: 500; line-height: 1.3; margin-bottom: 30px;
 
 /* --- 10. Responsive --- */
 @media (max-width: 900px) {
-    .container { padding: 0 24px; }
-    .header { height: 70px; }
-    .profile-flex { flex-direction: column; text-align: center; gap: 40px; }
-    .profile-image { flex: none; width: 100%; max-width: 350px; height: 450px; }
-    .skills-grid { grid-template-columns: 1fr; gap: 60px; }
-    h2 { font-size: 1.8rem; }
-    .timeline-item { flex-direction: column; gap: 10px; }
-    .time { flex: none; }
-    .totop { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+    .container {
+        padding: 0 24px;
+    }
+
+    .header {
+        height: 70px;
+    }
+
+    .profile-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .profile-image {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        height: 450px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .time {
+        flex: none;
+    }
+
+    .totop {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
 }
