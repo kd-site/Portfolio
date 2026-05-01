@@ -54,6 +54,10 @@ body {
     }
 }
 
+a:hover{
+    opacity: .8;
+}
+
 /* --- 3. Header --- */
 .header {
     height: 90px;
