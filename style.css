@@ -35,6 +35,10 @@ body {
     overflow-x: hidden;
 }
 
+a:hover{
+    opacity: .8;
+}
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -52,10 +56,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-a:hover{
-    opacity: .8;
 }
 
 /* --- 3. Header --- */
