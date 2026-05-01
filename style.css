@@ -174,7 +174,7 @@ h2 {
 }
 
 .skill-icon {
-    font-size: 3.5rem;
+    font-size: 5.5rem;
     margin-bottom: 35px;
     color: var(--accent-color);
     height: 100px;
@@ -183,7 +183,7 @@ h2 {
 }
 
 .skill-content h4 {
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     margin-bottom: 20px;
     font-weight: 500;
 }
@@ -191,10 +191,6 @@ h2 {
 .skill-content p {
     font-size: 0.95rem;
     color: var(--text-muted);
-}
-
-.skill-content .fa-solid {
-    font-size: 80px;
 }
 
 /* スキルカード内のテキストスタイル修正 */
