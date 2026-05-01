@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | 8th Year Web Developer</title>
+    <title>Portfolio | 8th Year Specialist</title>
     <link rel="stylesheet" href="style.css">
+    <!-- アイコン用のCDN（Font Awesome） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">CREATOR PORTFOLIO</h1>
+            <h1 class="logo">PORTFOLIO.</h1>
             <nav class="nav">
                 <ul>
                     <li><a href="#profile">Profile</a></li>
@@ -24,11 +26,15 @@
         <!-- Profile Section -->
         <section id="profile" class="section profile-section">
             <div class="container">
-                <div class="profile-grid">
+                <div class="profile-flex">
+                    <div class="profile-image">
+                        <!-- 画像をここに配置（img/profile.jpg など） -->
+                        <img src="https://via.placeholder.com/400x500" alt="Your Profile">
+                    </div>
                     <div class="profile-text">
                         <span class="label">ABOUT ME</span>
-                        <h2>8年間の運用とコーディングで、<br>Webの「日常」を支える。</h2>
-                        <p>2018年よりWeb制作業界に携わり、大手企業のサイト運用から新規LP制作まで幅広く対応。単に「作る」だけでなく、公開後の修正負荷を最小限に抑える「保守性の高いコード」に定評があります。</p>
+                        <h2>Webの可能性を、<br><span class="highlight">確かな技術</span>で支える。</h2>
+                        <p>2018年より活動。8年間、数多くのWebサイトの運用・コーディングに従事してきました。私のモットーは「美しいソースコードは、最高の運用を生む」こと。複雑な要件を整理し、誰が見てもメンテナンスしやすい設計を提供します。</p>
                     </div>
                 </div>
             </div>
@@ -37,22 +43,22 @@
         <!-- Skills Section -->
         <section id="skills" class="section skills-section">
             <div class="container">
-                <h3 class="section-title">Technical Skills</h3>
+                <h3 class="section-title">Expertise</h3>
                 <div class="skills-grid">
                     <div class="skill-card">
-                        <div class="skill-icon">01</div>
+                        <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
                         <h4>Coding</h4>
-                        <p>HTML5, CSS3(Sass), JavaScript, TypeScript. BEMやFLOCSSを用いた大規模設計が可能。</p>
+                        <p>HTML5, CSS3(Sass), JavaScript. メンテナンス性の高いBEM設計を得意とします。</p>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-icon">02</div>
+                        <div class="skill-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
                         <h4>Operation</h4>
-                        <p>WordPress、定常運用、バナー更新。スピード感と正確性を両立させた運用体制の構築。</p>
+                        <p>WordPress更新、大規模サイトの保守。スピード感のある正確な更新作業を実現。</p>
                     </div>
                     <div class="skill-card">
-                        <div class="skill-icon">03</div>
-                        <h4>Tools</h4>
-                        <p>Git / GitHub, Figma, Adobe CC, VSCode. チーム開発における円滑な連携環境の提供。</p>
+                        <div class="skill-icon"><i class="fa-solid fa-terminal"></i></div>
+                        <h4>Engineering</h4>
+                        <p>Git / GitHub, Node.js, Gulp等を用いた効率的な開発環境の構築。</p>
                     </div>
                 </div>
             </div>
@@ -61,29 +67,23 @@
         <!-- Experience Section -->
         <section id="experience" class="section experience-section">
             <div class="container">
-                <h3 class="section-title">Professional Experience</h3>
+                <h3 class="section-title">Timeline</h3>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="time">2021 - Present</div>
+                        <div class="time">2021 - 2026</div>
                         <div class="desc">
-                            <h4>制作会社でのシニアコーダー / 運用マネージャー</h4>
-                            <p>月間100本以上の更新案件を統括。コードレビュー及びコーディングガイドラインの策定を担当。</p>
+                            <h4>Senior Front-end & Ops Manager</h4>
+                            <p>運用フローの最適化を行い、更新ミスの80%削減を達成。大規模ポータルサイトのコーディングを牽引。</p>
                         </div>
                     </div>
-                    <div class="timeline-item">
-                        <div class="time">2016 - 2020</div>
-                        <div class="desc">
-                            <h4>フロントエンドエンジニア</h4>
-                            <p>ECサイトのフロントエンド実装及び運用。jQueryからモダンJSへの移行プロジェクトに従事。</p>
-                        </div>
-                    </div>
+                    <!-- 追加項目をここに -->
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 Your Name. Crafted with passion and 8 years of experience.</p>
+        <p>&copy; 2026 Your Name. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
