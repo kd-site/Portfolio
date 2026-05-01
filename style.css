@@ -282,7 +282,7 @@ h2 {
 }
 
 .work-image img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 4px; /* サイトの雰囲気に合わせた少しの角丸 */
   box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* 軽い浮き上がり */
