@@ -234,14 +234,15 @@ h2 {
 
 /* --- 7. Timeline --- */
 .timeline {
-    max-width: 800px;
+    /* max-width: 800px; */
     margin: 0 auto;
 }
 
 .timeline-item {
-    display: flex;
+    /* display: flex; */
     padding: 40px 0;
     border-bottom: 1px dotted var(--border);
+    font-size: 24px;
 }
 
 .time {
