@@ -1,102 +1,232 @@
+/* --- 1. Variables & Reset --- */
 :root {
-    --bg-main: #0a0e17;      /* 深みのあるネイビー */
-    --bg-card: #151b28;      /* 少し明るいネイビー */
-    --text-main: #e2e8f0;    /* 読みやすいライトグレー */
-    --accent-gold: #d4af37;  /* 落ち着いたゴールド */
+    --bg-main: #0a0e17;      /* 深みのあるミッドナイトネイビー */
+    --bg-card: #151b28;      /* カード用ネイビー */
+    --text-main: #e2e8f0;    /* ライトグレーテキスト */
+    --text-muted: #8892b0;   /* 補足テキスト */
+    --accent-gold: #d4af37;  /* ゴールド */
     --accent-gradient: linear-gradient(135deg, #d4af37 0%, #f1d27b 100%);
-    --border: rgba(255, 255, 255, 0.1);
-    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --border: rgba(255, 255, 255, 0.05); /* 極薄い境界線 */
+    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1); /* スッときてピタッと止まる */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
 
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
-    font-family: "Inter", "Hiragino Sans", sans-serif;
+    font-family: "Inter", "Hiragino Sans", "Yu Gothic", sans-serif;
     line-height: 1.8;
+    overflow-x: hidden;
 }
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
 
-/* --- Header --- */
+/* --- 2. Animations --- */
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 3. Header --- */
 .header {
-    height: 80px; display: flex; align-items: center;
-    position: sticky; top: 0; z-index: 1000;
-    background: rgba(10, 14, 23, 0.8); backdrop-filter: blur(15px);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 14, 23, 0.8);
+    backdrop-filter: blur(15px); /* 磨りガラス効果 */
     border-bottom: 1px solid var(--border);
 }
 
-.header .container { width: 100%; display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1rem; font-weight: 800; letter-spacing: 0.2em; color: var(--accent-gold); }
-.nav ul { display: flex; list-style: none; gap: 30px; }
-.nav a { text-decoration: none; color: var(--text-main); font-size: 0.8rem; transition: 0.3s; }
-.nav a:hover { color: var(--accent-gold); }
+.header .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-/* --- Profile Section --- */
-.section { padding: 120px 0; }
+.logo { 
+    font-size: 1rem; 
+    font-weight: 800; 
+    letter-spacing: 0.2em; 
+    color: var(--accent-gold); 
+}
+
+.nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px; 
+}
+
+.nav a { 
+    text-decoration: none; 
+    color: var(--text-main); 
+    font-size: 0.8rem; 
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+}
+
+.nav a:hover { 
+    color: var(--accent-gold); 
+}
+
+/* --- 4. Profile Section --- */
+.section { padding: 120px 0; border-bottom: 1px solid var(--border); }
 
 .profile-flex {
-    display: flex; align-items: center; gap: 80px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    animation: reveal 1s var(--ease-expo) both;
 }
 
 .profile-image {
-    flex: 0 0 400px; height: 500px;
-    background: var(--bg-card); position: relative;
-    overflow: hidden; border-radius: 4px;
+    flex: 0 0 400px;
+    height: 500px;
+    background: var(--bg-card);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border);
 }
 
 .profile-image img {
-    width: 100%; height: 100%; object-fit: cover;
-    filter: grayscale(20%); transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%); /* 普段は白黒気味に */
+    transition: 0.6s var(--ease-expo);
 }
 
-.profile-image:hover img { filter: grayscale(0%); transform: scale(1.05); }
+.profile-image:hover img {
+    filter: grayscale(0%); /* ホバーでカラーに */
+    transform: scale(1.05);
+}
+
+.profile-text .label {
+    display: block; font-size: 0.7rem; letter-spacing: 0.4em;
+    color: var(--accent-gold); margin-bottom: 15px;
+}
+
+.profile-text h2 {
+    font-size: 2.8rem; font-weight: 600; line-height: 1.2; margin-bottom: 30px;
+}
 
 .highlight { color: var(--accent-gold); }
-.label { display: block; font-size: 0.7rem; letter-spacing: 0.4em; color: var(--accent-gold); margin-bottom: 15px; }
-h2 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 30px; }
 
-/* --- Skill Cards --- */
-.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+/* --- 5. Skills Section (修正箇所) --- */
+.skills-section {
+    animation: reveal 1s var(--ease-expo) 0.2s both; /* 少し遅れて表示 */
+}
+
+.section-title {
+    font-size: 1.8rem; font-weight: 400; text-align: center;
+    margin-bottom: 80px; letter-spacing: 0.1em;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px; /* カード同士の間隔（余白） */
+}
 
 .skill-card {
-    padding: 50px 40px; background: var(--bg-card);
-    border: 1px solid var(--border); transition: all 0.5s var(--ease-expo);
+    display: flex;
+    flex-direction: column; /* 縦に並べる（アイコン上、テキスト下） */
+    align-items: center;    /* 中央寄せ */
+    text-align: center;     /* テキストも中央寄せ */
+    background: transparent; /* 背景なし（画像風） */
+    border: none;           /* 枠線なし（画像風） */
+    padding: 20px;
+    transition: transform 0.5s var(--ease-expo);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
 }
 
 .skill-icon {
-    font-size: 2rem; margin-bottom: 25px;
+    font-size: 3.5rem;      /* アイコンを大きく */
+    margin-bottom: 30px;    /* アイコンとテキストの間隔 */
+    height: 120px;          /* アイコンエリアの高さを固定して整列させる */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* アイコンをグラデーションに */
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.skill-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-gold);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+.skill-content h4 {
+    font-size: 1.3rem; font-weight: 500; margin-bottom: 20px;
+    letter-spacing: 0.1em; color: var(--text-main);
 }
 
-/* --- Timeline --- */
+.skill-content p {
+    font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;
+}
+
+/* --- 6. Timeline Section --- */
+.experience-section {
+    animation: reveal 1s var(--ease-expo) 0.4s both;
+}
+
+.timeline { max-width: 800px; margin: 0 auto; position: relative; }
+
 .timeline-item {
-    display: flex; padding: 40px 0; border-bottom: 1px solid var(--border);
-    animation: reveal 1s var(--ease-expo) both;
+    display: flex;
+    margin-bottom: 60px;
+    gap: 40px;
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
 }
 
-@keyframes reveal {
-    from { opacity: 0; transform: translateX(-20px); }
-    to { opacity: 1; transform: translateX(0); }
+.time {
+    flex: 0 0 180px; font-size: 1rem; font-weight: 700;
+    color: var(--accent-gold); padding-top: 5px;
 }
 
-.time { flex: 0 0 200px; font-weight: 700; color: var(--accent-gold); }
+.desc h4 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 500; }
+.desc p { font-size: 0.95rem; color: var(--text-muted); }
 
-/* --- Footer --- */
-.footer { padding: 60px 0; text-align: center; font-size: 0.7rem; opacity: 0.5; }
+/* --- 7. Footer --- */
+.footer {
+    padding: 80px 0; text-align: center; font-size: 0.7rem;
+    color: var(--text-muted); opacity: 0.6; border-top: 1px solid var(--border);
+}
 
+/* --- 8. Responsive --- */
 @media (max-width: 900px) {
-    .profile-flex { flex-direction: column; text-align: center; }
-    .profile-image { flex: none; width: 100%; max-width: 400px; }
-    .skills-grid { grid-template-columns: 1fr; }
+    .container { padding: 0 24px; }
+    .section { padding: 80px 0; }
+
+    /* Profile */
+    .profile-flex { flex-direction: column; gap: 40px; text-align: center; }
+    .profile-image { flex: none; width: 100%; max-width: 400px; height: auto; aspect-ratio: 4/5; }
+    .profile-text h2 { font-size: 1.8rem; }
+
+    /* Skills */
+    .skills-grid { grid-template-columns: 1fr; gap: 60px; }
+    .skill-icon { height: auto; margin-bottom: 20px; font-size: 3rem; }
+
+    /* Timeline */
+    .timeline-item { flex-direction: column; gap: 10px; margin-bottom: 40px; }
+    .time { flex: none; }
 }
