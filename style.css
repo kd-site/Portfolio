@@ -215,6 +215,21 @@ h2 {
     /* 下の説明文との間隔 */
 }
 
+/* スキルセクションのレイアウト修正 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列にする */
+    gap: 30px; /* カード間の余白 */
+    margin-top: 40px;
+}
+
+/* モバイル対応（画面が小さい時は1列に戻す） */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- 7. Timeline --- */
 .timeline {
     max-width: 800px;
