@@ -250,11 +250,11 @@ h2 {
     flex: 0 0 180px;
     font-weight: 700;
     color: var(--accent-color);
-    font-size: 30px;
+    /* font-size: 30px; */
 }
 
 .desc h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 10px;
 }
 
