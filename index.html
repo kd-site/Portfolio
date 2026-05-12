@@ -1,128 +1,165 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Web Specialist</title>
     <link rel="stylesheet" href="style.css">
-    </head>
-<body>
+    <!-- アイコン用のCDN（Font Awesome） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
-    <header class="site-header">
-        <div class="site-header__wrapper">
-            <p class="site-header__logo">PORTFOLIO</p>
-            <nav class="site-navigation" aria-label="メインナビゲーション">
-                <ul class="site-navigation__list">
-                    <li><a href="#profile" class="site-navigation__link">Profile</a></li>
-                    <li><a href="#skills" class="site-navigation__link">Skills</a></li>
-                    <li><a href="#work" class="site-navigation__link">Work</a></li>
+<body id="top">
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">PORTFOLIO</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#work">Work</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="profile" class="hero-section">
-            <div class="hero-section__container">
-                <div class="hero-section__media">
-                    <img src="profile-image.png" alt="プロフィール画像（猫とパソコン）" width="400" height="400">
-                </div>
-                <div class="hero-section__content">
-                    <p class="hero-section__label">ABOUT ME</p>
-                    <h1 class="hero-section__title">web制作歴8年<br><span class="hero-section__title--accent">webの日常</span>を支える</h1>
-                    <p class="hero-section__text">Web制作の世界に身を置いて8年。 更新・運用とコーディングを主軸に、数多くのプロジェクトに携わってきました。作って終わりではなく、後任者へも分かりやすいコード実装や文章チェックなど、丁寧な仕事を心掛けています。 最近はプライベートでAIを勉強中。</p>
+        <!-- Profile Section -->
+        <section id="profile" class="section profile-section">
+            <div class="container">
+                <div class="profile-flex">
+                    <div class="profile-image">
+                        <img src="profile-image.png" alt="Profile Image">
+                    </div>
+                    <div class="profile-text">
+                        <span class="label">ABOUT ME</span>
+                        <h2>web制作歴8年<br><span class="highlight">webの日常</span>を支える</h2>
+                        <p>Web制作の世界に身を置いて8年。<br>更新・運用とコーディングを主軸に、数多くのプロジェクトに携わってきました。作って終わりではなく、後任者へも分かりやすいコード実装や文章チェックなど、丁寧な仕事を心掛けています。<br>最近はプライベートでAIを勉強中。
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="skills-section">
-            <div class="skills-section__container">
-                <h2 class="common-heading">Skills</h2>
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <h3 class="section-title">Skills</h3>
                 <div class="skills-grid">
-                    <article class="skill-card">
-                        <div class="skill-card__icon" aria-hidden="true"></div>
-                        <h3 class="skill-card__title">コーディング</h3>
-                        <p class="skill-card__tags">HTML / CSS / jQuery / JavaScript / PHP</p>
-                        <p class="skill-card__text">デザインからのコーディングが可能です。CSSはネストも可。jQuery・JavaScriptは簡素な実装・修正が可。PHPはWordpressのコーディング程度が可。コーディングはSourcetreeを使用したgit管理の経験があります。</p>
-                    </article>
-                    
-                    <article class="skill-card">
-                        <div class="skill-card__icon" aria-hidden="true"></div>
-                        <h3 class="skill-card__title">CMS</h3>
-                        <p class="skill-card__tags">Wordpress / はなてCMS</p>
-                        <p class="skill-card__text">Wordpressは記事作成・更新・テンプレート修正などの実務経験があります。はてなCMSは新規テンプレート作成・テンプレートデザインの改修などの実務経験があります。</p>
-                    </article>
-
-                    <article class="skill-card">
-                        <div class="skill-card__icon" aria-hidden="true"></div>
-                        <h3 class="skill-card__title">デザイン</h3>
-                        <p class="skill-card__tags">Photoshop / illustrator / XD / figma</p>
-                        <p class="skill-card__text">バナーやサムネイルなど、簡単な画像作成や修正が可能です。</p>
-                    </article>
-
-                    <article class="skill-card">
-                        <div class="skill-card__icon" aria-hidden="true"></div>
-                        <h3 class="skill-card__title">ツール</h3>
-                        <p class="skill-card__tags">VSCode / Git / Sourcetree / Backlog / Notion / Google Workspace / slack / teams / Chatwork / zoom</p>
-                        <p class="skill-card__text">制作現場でよく使用されるスケジュール管理ツール、オフィスツール、コミュニケーションツールは、業務に支障ない程度で一通り使用できます。</p>
-                    </article>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="skill-content">
+                            <h4>コーディング</h4>
+                            <p><b>HTML / CSS / jQuery / JavaScript / PHP</b>デザインからのコーディングが可能です。CSSはネストも可。jQuery・JavaScriptは簡素な実装・修正が可。PHPはWordpressのコーディング程度が可。コーディングはSourcetreeを使用したgit管理の経験があります。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-solid fa-file-pen"></i></div>
+                        <div class="skill-content">
+                            <h4>CMS</h4>
+                            <p><b>Wordpress / はなてCMS</b>Wordpressは記事作成・更新・テンプレート修正などの実務経験があります。はてなCMSは新規テンプレート作成・テンプレートデザインの改修などの実務経験があります。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                        <div class="skill-content">
+                            <h4>デザイン</h4>
+                            <p><b>Photoshop / illustrator / XD / figma</b>バナーやサムネイルなど、簡単な画像作成や修正が可能です。</p>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <div class="skill-content">
+                            <h4>ツール</h4>
+                            <p><b>VSCode / Git / Sourcetree / Backlog / Notion / Google Workspace / slack / teams / Chatwork / zoom</b>制作現場でよく使用されるスケジュール管理ツール、オフィスツール、コミュニケーションツールは、業務に支障ない程度で一通り使用できます。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="work" class="work-section">
-            <div class="work-section__container">
-                <h2 class="common-heading">Work</h2>
-                
-                <div class="work-grid">
-                    <article class="work-item">
-                        <div class="work-item__media">
-                            <img src="thumb-01.jpg" alt="タピオカショップTapiOkaのWebサイト制作例">
+        <!-- Experience Section -->
+        <section id="work" class="section experience-section">
+            <div class="container">
+                <h3 class="section-title">Work</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">ECサイト / 採用サイト / 不動産サイト etc.</div>
+                        <div class="desc">
+                            <h4>記事ページ作成・更新、デザイン修正、バナー作成、メルマガ作成</h4>
+                            <p>記事更新・修正をメインに、バナーなど簡素な画像作成や画像レタッチなどを経験</p>
                         </div>
-                        <div class="work-item__content">
-                            <h3 class="work-item__title">【職業訓練制作物】TapiOka｜タピオカを使ったドリンクの店</h3>
-                            <p class="work-item__tags">企画 / 情報設計 / デザイン / コーディング / JavaScript / HTML・CSS / jQuery / レスポンシブ</p>
-                            <p class="work-item__text">実在のお店をモデルに、クライアントから依頼を受けた程で制作をしました。要件定義～フレームワーク～カンプ～コーディングまでと、一連の工程を想定して制作しています。 主要な項目はトップページ内ですべて把握できるようにし、メニューは別ページにし「値段」「サイズ」が一覧で見やすいようにしました。タピオカドリンクのポップさを出すために、タイトルやロゴにはフリーフォントを使用。ロゴにはタピオカドリンクのストローがくるくると可愛く回るようにgif画像を使用しました。</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="time">オウンドメディアサイト / コーポレートサイト / ブランディングサイト etc.</div>
+                        <div class="desc">
+                            <h4>CMSのテンプレート改修、新規ページの作成、画像修正、バナー作成</h4>
+                            <p>HTML・CSSコーディングをメインに、簡素な動きをjavascriptで実装。簡素なバナーやサムネイル作成などを経験</p>
                         </div>
-                    </article>
-
-                    <article class="work-item">
-                        <div class="work-item__media">
-                            <img src="make-300x250.jpg" alt="コスメバナーの制作実績">
-                            <img src="make-320x100.jpg" alt="コスメバナーの制作実績">
-                        </div>
-                        <div class="work-item__content">
-                            <h3 class="work-item__title">【職業訓練制作物】コスメバナー</h3>
-                            <p class="work-item__tags">Illustrator / Photoshop</p>
-                            <p class="work-item__text">作業時間 約3時間（素材探し～完成まで）。フォントに游明朝を使用し女性らしさの表現。ワンポイントに高級感を感じる赤色とゴールドの色味を付けました。</p>
-                        </div>
-                    </article>
-
-                    <article class="work-item">
-                        <div class="work-item__media">
-                            <img src="game-300x250.jpg" alt="ソーシャルゲームバナーの制作実績">
-                            <img src="game-320x100.jpg" alt="ソーシャルゲームバナーの制作実績">
-                        </div>
-                        <div class="work-item__content">
-                            <h3 class="work-item__title">【職業訓練制作物】ソーシャルゲームバナー</h3>
-                            <p class="work-item__tags">Illustrator / Photoshop</p>
-                            <p class="work-item__text">作業時間 約4時間（素材探し～完成まで）。豊富なキャラクターがいるゲームだと知ってもらう為、いくつかのキャラクターを配置。特別なキャンペーンの訴求性を高める為に「100連ガチャ」のフォントを大きく目立たせ、グラデーションを掛けたレインボーで目立つようにしました。目玉の「100連ガチャ」の文字には特別感を出す為にキラキラした装飾を使用。</p>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </div>
+        </section>
+        <section class="work-gallery">
+        <div class="work-item">
+            <div class="work-image">
+            <a href="http://kdportfolio.kinugoshi.net/KD-portfolio/TapiOka/" target="_blank"><img src="thumb-01.jpg" alt="制作物のプレビュー"></a>
+            </div>
+            <div class="work-info">
+            <h3 class="work-title"><a href="http://kdportfolio.kinugoshi.net/KD-portfolio/TapiOka/"
+                target="_blank">【職業訓練制作物】TapiOka｜タピオカを使ったドリンクの店</a></h3>
+            <p class="work-subtitle">企画 / 情報設計 / デザイン / コーディング / JavaScript / HTML・CSS / jQuery / レスポンシブ</p>
+            <p class="work-text">
+                実在のお店をモデルに、クライアントから依頼を受けた程で制作をしました。要件定義～フレームワーク～カンプ～コーディングまでと、一連の工程を想定して制作しています。<br>主要な項目はトップページ内ですべて把握できるようにし、メニューは別ページにし「値段」「サイズ」が一覧で見やすいようにしました。
+                タピオカドリンクのポップさを出すために、タイトルやロゴにはフリーフォントを使用。
+                ロゴにはタピオカドリンクのストローがくるくると可愛く回るようにgif画像を使用しました。
+            </p>
+            </div>
+        </div>
+        <div class="work-item">
+            <div class="work-image">
+            <img src="make-300x250.jpg" alt="制作物のプレビュー">
+            <img src="make-320x100.jpg" alt="制作物のプレビュー">
+            </div>
+            <div class="work-info">
+            <h3 class="work-title">【職業訓練制作物】コスメバナー</h3>
+            <p class="work-subtitle">Illustrator / Photoshop</p>
+            <p class="work-text">
+                <b>作業時間 約3時間（素材探し～完成まで）</b><br>フォントに游明朝を使用し女性らしさの表現。ワンポイントに高級感を感じる赤色とゴールドの色味を付けました。
+            </p>
+            </div>
+        </div>
+        <div class="work-item">
+            <div class="work-image">
+            <img src="game-300x250.jpg" alt="制作物のプレビュー">
+            <img src="game-320x100.jpg" alt="制作物のプレビュー">
+            </div>
+            <div class="work-info">
+            <h3 class="work-title">【職業訓練制作物】ソーシャルゲームバナー</h3>
+            <p class="work-subtitle">Illustrator / Photoshop</p>
+            <p class="work-text">
+                <b>作業時間 約4時間（素材探し～完成まで）</b><br>富なキャラクターがいるゲームだと知ってもらう為、いくつかのキャラクターを配置。
+                特別なキャンペーンの訴求性を高める為に「100連ガチャ」のフォントを大きく目立たせ、グラデーションを掛けたレインボーで目立つようにしました。
+                目玉の「100連ガチャ」の文字には特別感を出す為にキラキラした装飾を使用。
+            </p>
+            </div>
+        </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="site-footer__container">
-            <p class="site-footer__copyright"><small>&copy; 2026 kd-portfolio.</small></p>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2026 kd-portfolio.</p>
     </footer>
 
-    <a href="#" class="back-to-top" aria-label="ページの先頭へ戻る">
-        <span aria-hidden="true">↑</span>
+    <!-- トップスクロールボタン -->
+    <a href="#top" class="totop">
+        <i class="fa-solid fa-arrow-up"></i>
     </a>
 
 </body>
+
 </html>
