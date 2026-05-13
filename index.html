@@ -4,150 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Web Specialist</title>
+    <title>KD-Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- アイコン用のCDN（Font Awesome） -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body id="top">
-
     <header class="header">
-        <div class="container">
-            <h1 class="logo">PORTFOLIO</h1>
-            <nav class="nav">
+        <div class="container header-inner">
+            <h1 class="site-logo">PORTFOLIO</h1>
+
+            <button class="menu-btn" id="js-menu-btn" aria-label="メニュー開閉">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="nav" id="js-nav">
                 <ul>
                     <li><a href="#profile">Profile</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#work">Work</a></li>
+                    <li><a href="#production">Production</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Profile Section -->
-        <section id="profile" class="section profile-section">
-            <div class="container">
-                <div class="profile-flex">
-                    <div class="profile-image">
-                        <img src="profile-image.png" alt="Profile Image">
-                    </div>
-                    <div class="profile-text">
-                        <span class="label">ABOUT ME</span>
-                        <h2>web制作歴8年<br><span class="highlight">webの日常</span>を支える</h2>
-                        <p>Web制作の世界に身を置いて8年。<br>更新・運用とコーディングを主軸に、数多くのプロジェクトに携わってきました。作って終わりではなく、後任者へも分かりやすいコード実装や文章チェックなど、丁寧な仕事を心掛けています。<br>最近はプライベートでAIを勉強中。
-                        </p>
-                    </div>
+        <section id="profile" class="section js-fade">
+            <div class="container profile-grid">
+                <div class="profile-img">
+                    <img src="img/profile-image.png" alt="プロフィール画像">
+                </div>
+                <div class="profile-content">
+                    <p class="section-subtitle">ABOUT ME</p>
+                    <h2 id="profile-title">web制作歴9年<br><span class="highlight">webの日常を支える</span></h2>
+                    <p>Web制作の世界に身を置いて9年。<br>更新・運用とコーディングを主軸に、数多くのプロジェクトに携わってきました。後任者へも分かりやすいコード実装や文章チェックなど、丁寧な仕事を心掛けています。<br>最近はプライベートでAIを勉強中。
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section skills-section">
+        <section id="skills" class="section js-fade">
             <div class="container">
-                <h3 class="section-title">Skills</h3>
+                <h2 class="section-title">Skills</h2>
                 <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                        <div class="skill-content">
-                            <h4>コーディング</h4>
-                            <p><b>HTML / CSS / jQuery / JavaScript / PHP</b>デザインからのコーディングが可能です。CSSはネストも可。jQuery・JavaScriptは簡素な実装・修正が可。PHPはWordpressのコーディング程度が可。コーディングはSourcetreeを使用したgit管理の経験があります。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-file-pen"></i></div>
-                        <div class="skill-content">
-                            <h4>CMS</h4>
-                            <p><b>Wordpress / はなてCMS</b>Wordpressは記事作成・更新・テンプレート修正などの実務経験があります。はてなCMSは新規テンプレート作成・テンプレートデザインの改修などの実務経験があります。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-                        <div class="skill-content">
-                            <h4>デザイン</h4>
-                            <p><b>Photoshop / illustrator / XD / figma</b>バナーやサムネイルなど、簡単な画像作成や修正が可能です。</p>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                        <div class="skill-content">
-                            <h4>ツール</h4>
-                            <p><b>VSCode / Git / Sourcetree / Backlog / Notion / Google Workspace / slack / teams / Chatwork / zoom</b>制作現場でよく使用されるスケジュール管理ツール、オフィスツール、コミュニケーションツールは、業務に支障ない程度で一通り使用できます。</p>
-                        </div>
-                    </div>
+                    <article class="skill-card">
+                        <div class="skill-icon-wrap"><i class="fas fa-code"></i></div>
+                        <h3>コーディング</h3>
+                        <p class="tags">HTML / CSS / jQuery / JavaScript / PHP</p>
+                        <p>カンプデザインからのコーディングが可能です。CSSはネストも可。jQuery・JavaScriptは簡素な実装・修正が可。PHPはWordpressのコーディング程度が可。コーディングはSourcetreeを使用したgit管理の経験があります。AIで実装の効率化を図っています。
+                        </p>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-icon-wrap"><i class="fas fa-edit"></i></div>
+                        <h3>CMS</h3>
+                        <p class="tags">WordPress / はてなCMS</p>
+                        <p>Wordpressは記事作成・更新・テンプレート修正などの実務経験があります。はてなCMSは新規テンプレート作成・テンプレートデザインの改修などの実務経験があります。</p>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-icon-wrap"><i class="fas fa-paint-brush"></i></div>
+                        <h3>デザイン</h3>
+                        <p class="tags">Photoshop / illustrator / XD / Figma</p>
+                        <p>バナーやサムネイルなど、簡単な画像作成や修正が可能です。<br>AIからのアイデア出しで効率化を図っています。</p>
+                    </article>
+                    <article class="skill-card">
+                        <div class="skill-icon-wrap"><i class="fas fa-tools"></i></div>
+                        <h3>ツール</h3>
+                        <p class="tags">VSCode / Git / Sourcetree / Backlog / Notion / Google Workspace / slack / teams
+                            / Chatwork / zoom</p>
+                        <p>制作現場でよく使用されるスケジュール管理ツール、オフィスツール、コミュニケーションツールは、業務に支障ない程度で一通り使用できます。</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="work" class="section experience-section">
+        <section id="work" class="section work-summary-section js-fade">
             <div class="container">
-                <h3 class="section-title">Work</h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="time">ECサイト / 採用サイト / 不動産サイト etc.</div>
-                        <div class="desc">
-                            <h4>記事ページ作成・更新、デザイン修正、バナー作成、メルマガ作成</h4>
-                            <p>記事更新・修正をメインに、バナーなど簡素な画像作成や画像レタッチなどを経験</p>
+                <h2 class="section-title">Work</h2>
+                <p class="note">※業務を兼任しているものある為、経験年数に関しては被っている期間があります。</p>
+                <div class="work-summary-list">
+                    <article class="work-summary-item">
+                        <h3 class="work-site-name">ECサイト / オウンドメディアサイト（Wordpress、はてなCMS） / 商業施設サイト / 不動産サイト / 採用サイト等
+                        </h3>
+                        <dl class="work-meta">
+                            <div class="meta-row">
+                                <dt>職種</dt>
+                                <dd>web更新・運用 / コーダー</dd>
+                            </div>
+                            <div class="meta-row">
+                                <dt>業務</dt>
+                                <dd>web更新、記事更新、HTML,CSS,簡素なJSを使用したコーディング、バナー・サムネイルなどの簡単なデザイン作成、画像レタッチ、映画試写会ページ作成、サイネージ配信設定、外部との素材やり取り
+                                </dd>
+                            </div>
+                            <div class="meta-row">
+                                <dt>年数</dt>
+                                <dd>約9年</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <article class="work-summary-item">
+                        <h3 class="work-site-name">オウンドメディアサイト（はてなCMS） / コーポレートサイト等</h3>
+                        <div class="meta-row">
+                            <dt>職種</dt>
+                            <dd>webディレクション 4ヵ月 / ディレクション補助 3年</dd>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="time">オウンドメディアサイト / コーポレートサイト / ブランディングサイト etc.</div>
-                        <div class="desc">
-                            <h4>CMSのテンプレート改修、新規ページの作成、画像修正、バナー作成</h4>
-                            <p>HTML・CSSコーディングをメインに、簡素な動きをjavascriptで実装。簡素なバナーやサムネイル作成などを経験</p>
-                        </div>
-                    </div>
+                        <dl class="work-meta">
+                            <div class="meta-row">
+                                <dt>業務</dt>
+                                <dd>要求定義・要件定義・設計、プロジェクト進行・管理、ワイヤーフレーム作成、競合リサーチ、公開前のビューチェック・バグチェック</dd>
+                            </div>
+                            <div class="meta-row">
+                                <dt>年数</dt>
+                                <dd>約3年</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <article class="work-summary-item">
+                        <h3 class="work-site-name"> web制作職業訓練</h3>
+                        <dl class="work-meta">
+                            <div class="meta-row">
+                                <dt>経験年数</dt>
+                                <dd>6ヵ月</dd>
+                            </div>
+                            <p>web制作に関するスキルを習得</p>
+                        </dl>
+                    </article>
                 </div>
             </div>
         </section>
-        <section class="work-gallery">
-        <div class="work-item">
-            <div class="work-image">
-            <a href="http://kdportfolio.kinugoshi.net/KD-portfolio/TapiOka/" target="_blank"><img src="thumb-01.jpg" alt="制作物のプレビュー"></a>
+
+        <section id="production" class="section js-fade">
+            <div class="container">
+                <h2 class="section-title">Production</h2>
+                <div class="production-list">
+                    <article class="production-item js-fade">
+                        <div class="production-visual"><a href="http://kdportfolio.kinugoshi.net/KD-portfolio/TapiOka/"
+                                target="_blank"><img src="img/thumb-01.jpg" alt="TapiOka プレビュー"></a></div>
+                        <div class="production-info">
+                            <h3><a href="http://kdportfolio.kinugoshi.net/KD-portfolio/TapiOka/"
+                                    target="_blank">【職業訓練時の制作物】TapiOka｜タピオカドリンク店サイト</a></h3>
+                            <p class="production-tag">企画 / 情報設計 / デザイン / コーディング</p>
+                            <p>実在のお店をモデルに、クライアントから依頼を受けた程で制作をしました。要件定義～フレームワーク～カンプ～コーディングまでと、一連の工程を想定して制作しています。
+                                主要な項目はトップページ内ですべて把握できるようにし、メニューは別ページにし「値段」「サイズ」が一覧で見やすいようにしました。
+                                タピオカドリンクのポップさを出すために、タイトルやロゴにはフリーフォントを使用。 ロゴにはタピオカドリンクのストローがくるくると可愛く回るようにgif画像を使用しました。
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="production-item js-fade">
+                        <div class="production-visual">
+                            <img src="img/make-320x100.jpg" alt="コスメバナー PC">
+                            <img src="img/make-300x250.jpg" alt="コスメバナー スマートフォン">
+                        </div>
+                        <div class="production-info">
+                            <h3>【職業訓練時の制作物】コスメバナー</h3>
+                            <p class="production-tag">Illustrator / Photoshop</p>
+                            <p class="production-time">作業時間 約3時間</p>
+                            <p>フォントに游明朝を使用し女性らしさの表現。ワンポイントに高級感を感じる赤色とゴールドの色味を付けました。</p>
+                        </div>
+                    </article>
+
+                    <article class="production-item js-fade">
+                        <div class="production-visual">
+                            <img src="img/game-320x100.jpg" alt="ソーシャルゲームバナー  PC">
+                            <img src="img/game-300x250.jpg" alt="ソーシャルゲームバナー スマートフォン">
+                        </div>
+                        <div class="production-info">
+                            <h3>【職業訓練制作物】ソーシャルゲームバナー</h3>
+                            <p class="production-tag">Illustrator / Photoshop</p>
+                            <p>豊富なキャラクターがいるゲームだと知ってもらう為、いくつかのキャラクターを配置。
+                                特別なキャンペーンの訴求性を高める為に「100連ガチャ」のフォントを大きく目立たせ、グラデーションを掛けたレインボーで目立つようにしました。
+                                目玉の「100連ガチャ」の文字には特別感を出す為にキラキラした装飾を使用。</p>
+                        </div>
+                    </article>
+                </div>
             </div>
-            <div class="work-info">
-            <h3 class="work-title"><a href="http://kdportfolio.kinugoshi.net/KD-portfolio/TapiOka/"
-                target="_blank">【職業訓練制作物】TapiOka｜タピオカを使ったドリンクの店</a></h3>
-            <p class="work-subtitle">企画 / 情報設計 / デザイン / コーディング / JavaScript / HTML・CSS / jQuery / レスポンシブ</p>
-            <p class="work-text">
-                実在のお店をモデルに、クライアントから依頼を受けた程で制作をしました。要件定義～フレームワーク～カンプ～コーディングまでと、一連の工程を想定して制作しています。<br>主要な項目はトップページ内ですべて把握できるようにし、メニューは別ページにし「値段」「サイズ」が一覧で見やすいようにしました。
-                タピオカドリンクのポップさを出すために、タイトルやロゴにはフリーフォントを使用。
-                ロゴにはタピオカドリンクのストローがくるくると可愛く回るようにgif画像を使用しました。
-            </p>
-            </div>
-        </div>
-        <div class="work-item">
-            <div class="work-image">
-            <img src="make-300x250.jpg" alt="制作物のプレビュー">
-            <img src="make-320x100.jpg" alt="制作物のプレビュー">
-            </div>
-            <div class="work-info">
-            <h3 class="work-title">【職業訓練制作物】コスメバナー</h3>
-            <p class="work-subtitle">Illustrator / Photoshop</p>
-            <p class="work-text">
-                <b>作業時間 約3時間（素材探し～完成まで）</b><br>フォントに游明朝を使用し女性らしさの表現。ワンポイントに高級感を感じる赤色とゴールドの色味を付けました。
-            </p>
-            </div>
-        </div>
-        <div class="work-item">
-            <div class="work-image">
-            <img src="game-300x250.jpg" alt="制作物のプレビュー">
-            <img src="game-320x100.jpg" alt="制作物のプレビュー">
-            </div>
-            <div class="work-info">
-            <h3 class="work-title">【職業訓練制作物】ソーシャルゲームバナー</h3>
-            <p class="work-subtitle">Illustrator / Photoshop</p>
-            <p class="work-text">
-                <b>作業時間 約4時間（素材探し～完成まで）</b><br>富なキャラクターがいるゲームだと知ってもらう為、いくつかのキャラクターを配置。
-                特別なキャンペーンの訴求性を高める為に「100連ガチャ」のフォントを大きく目立たせ、グラデーションを掛けたレインボーで目立つようにしました。
-                目玉の「100連ガチャ」の文字には特別感を出す為にキラキラした装飾を使用。
-            </p>
-            </div>
-        </div>
         </section>
     </main>
 
@@ -155,11 +186,40 @@
         <p>&copy; 2026 kd-portfolio.</p>
     </footer>
 
-    <!-- トップスクロールボタン -->
-    <a href="#top" class="totop">
-        <i class="fa-solid fa-arrow-up"></i>
-    </a>
+    <a href="#top" class="page-top-btn" aria-label="トップへ戻る"></a>
 
+    <script>
+        // 1. ふわっと表示
+        const fadeScroll = () => {
+            const targets = document.querySelectorAll('.js-fade');
+            targets.forEach(target => {
+                const rect = target.getBoundingClientRect().top;
+                const offset = 100;
+                if (rect < window.innerHeight - offset) {
+                    target.classList.add('is-show');
+                }
+            });
+        };
+
+        // 2. ハンバーガーメニュー
+        const menuBtn = document.getElementById('js-menu-btn');
+        const nav = document.getElementById('js-nav');
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+        });
+
+        // リンククリック時に閉じる
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('is-active');
+                nav.classList.remove('is-active');
+            });
+        });
+
+        window.addEventListener('scroll', fadeScroll);
+        window.addEventListener('load', fadeScroll);
+    </script>
 </body>
 
 </html>

@@ -1,418 +1,389 @@
-/* --- 1. Variables & Base --- */
+/* --- Color Palette & Variables --- */
 :root {
-    --bg-main: #f9f7f2;
-    /* 明るく温かみのあるオフホワイト */
+    --primary-charcoal: #333333;
+    --accent-terracotta: #c36a4d;
+    --accent-olive: #6b7a5f;
+    --bg-main: #fcfaf5;
     --bg-card: #ffffff;
-    /* カードは清潔感のある白 */
-    --text-main: #333333;
-    /* 深みのあるチャコールグレー */
-    --text-muted: #666666;
-    /* 補足用グレー */
-    --accent-color: #4a6741;
-    /* 信頼感のあるモスグリーン */
-    --border: #e0ddd5;
-    /* 背景に馴染む境界線 */
-    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --text-dark: #444444;
+    --border: #e8e2d9;
 }
 
+/* --- Base Styles --- */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    /* スムーズスクロールを有効化 */
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", sans-serif;
     line-height: 1.8;
-    letter-spacing: 0.02em;
-    overflow-x: hidden;
+    color: var(--text-dark);
+    background-color: var(--bg-main);
 }
 
-a {
-    transition: .3s;
-}
-
-a:hover {
-    opacity: .8;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 30px;
 }
 
-/* --- 2. Animations --- */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.section {
+    padding: 80px 0;
+    overflow: hidden;
 }
 
-/* --- 3. Header --- */
+/* --- スクロールアニメーション (js-fade) --- */
+.js-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s, transform 1.2s;
+}
+
+.js-fade.is-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Header & Nav --- */
 .header {
-    height: 90px;
-    display: flex;
-    align-items: center;
+    background: var(--primary-charcoal);
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(249, 247, 242, 0.9);
-    backdrop-filter: blur(10px);
+    height: 70px;
 }
 
-.header .container {
-    width: 100%;
+.header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
-.logo {
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
+.site-logo {
+    color: #fff;
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+    font-weight: bold;
 }
 
 .nav ul {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 30px;
 }
 
 .nav a {
     text-decoration: none;
-    color: var(--text-main);
-    font-size: 0.85rem;
-    transition: color 0.3s ease;
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    transition: 0.3s;
 }
 
 .nav a:hover {
-    color: var(--accent-color);
+    opacity: 1;
+    color: var(--accent-terracotta);
 }
 
-/* --- 4. Section General --- */
-.section {
-    padding: 120px 0;
-    border-bottom: 1px solid var(--border);
+/* --- Hamburger Button --- */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1100;
 }
 
-.section-title {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-bottom: 80px;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-}
-
-/* --- 5. Profile --- */
-.profile-flex {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-    animation: fadeInUp 1.2s var(--ease-expo) both;
-}
-
-.profile-image {
-    flex: 0 0 400px;
-    height: 500px;
-    background-color: #ddd;
-    border-radius: 2px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-}
-
-.profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s var(--ease-expo);
-}
-
-.profile-image:hover img {
-    transform: scale(1.05);
-}
-
-.label {
+.menu-btn span {
     display: block;
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    color: var(--accent-color);
-    margin-bottom: 20px;
-    font-weight: 700;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
 }
 
-h2 {
-    font-size: 2.6rem;
-    font-weight: 500;
-    line-height: 1.3;
-    margin-bottom: 30px;
+.menu-btn span:nth-child(1) {
+    top: 0;
+}
+
+.menu-btn span:nth-child(2) {
+    top: 11px;
+}
+
+.menu-btn span:nth-child(3) {
+    bottom: 0;
+}
+
+.menu-btn.is-active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu-btn.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.is-active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* --- UI Parts --- */
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    text-align: center;
+    color: var(--primary-charcoal);
+}
+
+.section-title:has(+ .note) {
+    margin-bottom: 24px;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: var(--accent-terracotta);
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
 .highlight {
-    color: var(--accent-color);
+    color: var(--accent-terracotta);
 }
 
-/* --- 6. Skills (Image Style) --- */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.skill-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-.skill-icon {
-    font-size: 5.5rem;
-    margin-bottom: 35px;
-    color: var(--accent-color);
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-
-.skill-content h4 {
-    font-size: 2.3rem;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.skill-content p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-/* スキルカード内のテキストスタイル修正 */
-.skill-content p {
-    line-height: 1.6;
-    color: #333;
-    /* 全体のテキストカラー（任意で調整） */
-    text-align: left;
-}
-
-/* スキルリスト（最初の1行）の強調スタイル */
-.skill-content p b,
-.skill-content p strong {
-    display: block;
-    /* 改行させる */
-    font-size: 1.15rem;
-    /* 少し大きく（標準が1remの場合） */
-    color: #2c3e50;
-    /* 信頼感のある濃いめの色に変更 */
-    font-weight: 700;
-    /* しっかり太く */
-    margin-bottom: 8px;
-    /* 下の説明文との間隔 */
-    text-align: center;
-}
-
-/* スキルセクションのレイアウト修正 */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2列にする */
-    gap: 30px; /* カード間の余白 */
-    margin-top: 40px;
-}
-
-/* モバイル対応（画面が小さい時は1列に戻す） */
-@media (max-width: 768px) {
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* --- 7. Timeline --- */
-.timeline {
-    /* max-width: 800px; */
-    margin: 0 auto;
-}
-
-.timeline-item {
-    /* display: flex; */
-    padding: 40px 0;
-    border-bottom: 1px dotted var(--border);
-    font-size: 24px;
-    text-align: center;
-}
-
-.time {
-    flex: 0 0 180px;
-    font-weight: 700;
-    color: var(--accent-color);
-    /* font-size: 30px; */
-}
-
-.desc h4 {
-    font-size: 1rem;
+.section-subtitle {
+    font-size: 0.8rem;
+    color: var(--accent-terracotta);
+    font-weight: bold;
+    letter-spacing: 0.2em;
     margin-bottom: 10px;
 }
 
-.desc p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
 
-/* 制作物セクションのスタイル */
-.work-gallery {
-  padding: 40px 0;
-  max-width: 900px; /* 既存コンテンツの幅に合わせて調整してください */
-  margin: 0 auto;
-}
-
-.work-item {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 60px;
-  align-items: flex-start;
-}
-
-.work-image {
-  flex: 1;
-}
-
-.work-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 4px; /* サイトの雰囲気に合わせた少しの角丸 */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* 軽い浮き上がり */
-}
-
-.work-info {
-  flex: 1;
-}
-
-.work-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.work-subtitle {
-  font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
-}
-
-.work-text {
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: #555;
-}
-
-/* スマホ対応（縦並び） */
-@media (max-width: 768px) {
-  .work-item {
-    flex-direction: column;
-  }
-  .work-gallery {
-    padding: 20px;
-  }
-}
-
-/* --- 8. Footer --- */
-.footer {
-    padding: 80px 0;
+.skill-card {
+    padding: 40px 25px;
     text-align: center;
-    font-size: 0.75rem;
-    color: #999;
+    background: var(--bg-card);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
 }
 
-/* --- 9. Top Scroll Button --- */
-.totop {
+.skill-card:hover {
+    border-color: var(--accent-terracotta);
+    transform: translateY(-5px);
+}
+
+.skill-icon-wrap {
+    font-size: 2.8rem;
+    color: var(--accent-terracotta);
+    margin-bottom: 20px;
+}
+
+.tags {
+    font-size: 0.8rem;
+    color: var(--accent-olive);
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Work */
+.note {
+    font-size: 14px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.work-summary-section {
+    background-color: #f7f3ed;
+}
+
+.work-summary-item {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 24px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border);
+}
+
+.work-site-name {
+    padding-bottom: 16px;
+}
+
+/* .work-meta {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+} */
+
+.meta-row {
+    display: flex;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.meta-row dt {
+    /* width: 64px; */
+    padding-right: 24px;
+    flex-shrink: 0;
+    font-weight: bold;
+    color: var(--accent-terracotta);
+}
+
+/* Production */
+.production-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.production-item {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.production-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.production-visual {
+    flex: 1;
+}
+
+.production-visual a {
+    transition: .2s;
+}
+
+.production-visual a:hover {
+    opacity: .8;
+}
+
+.production-visual img {
+    /* width: 100%; */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.production-info {
+    flex: 1;
+}
+
+.production-tag {
+    color: var(--accent-olive);
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.production-time {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+    display: block;
+}
+
+/* Footer */
+.footer {
+    padding: 60px 0;
+    text-align: center;
+    background: var(--primary-charcoal);
+    color: #fff;
+    font-size: 0.85rem;
+}
+
+/* Page Top Button */
+.page-top-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    right: 20px;
+    bottom: 20px;
     width: 50px;
     height: 50px;
-    background-color: var(--bg-card);
-    color: var(--accent-color);
-    border: 1px solid var(--border);
+    background-color: var(--accent-terracotta);
     border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    text-decoration: none;
-    z-index: 999;
-    transition: all 0.3s var(--ease-expo);
-    /* スクロールされるまで隠しておくための設定 */
-    opacity: 0.3;
+    justify-content: center;
+    z-index: 1001;
+    transition: 0.3s;
 }
 
-.totop:hover {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    transform: translateY(-5px);
-    opacity: 1;
+.page-top-btn::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(-45deg);
+    margin-top: 5px;
 }
 
-/* --- 10. Responsive --- */
-@media (max-width: 900px) {
-    .container {
-        padding: 0 24px;
+/* --- Responsive --- */
+@media (max-width: 850px) {
+    .menu-btn {
+        display: block;
     }
 
-    .header {
-        height: 70px;
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: var(--primary-charcoal);
+        transition: 0.4s;
+        padding-top: 100px;
     }
 
-    .profile-flex {
+    .nav.is-active {
+        right: 0;
+    }
+
+    .nav ul {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
         gap: 40px;
     }
 
-    .profile-image {
-        flex: none;
-        width: 100%;
-        max-width: 350px;
-        height: 450px;
+    .nav a {
+        font-size: 1.5rem;
     }
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .timeline-item {
+    .profile-grid,
+    .production-item,
+    .production-item:nth-child(even) {
         flex-direction: column;
-        gap: 10px;
+        text-align: center;
     }
 
-    .time {
-        flex: none;
-    }
-
-    .totop {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-    }
+    /* .meta-row {
+        justify-content: center;
+    } */
 }
