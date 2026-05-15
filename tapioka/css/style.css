@@ -197,7 +197,7 @@ body {
   width: 120px;
   height: 120px;
   margin: 0 auto 15px;
-  background-image: url("/Portfolio/tapioka/img/specialty.jpg");
+  background-image: url("/img/specialty.jpg");
   background-size: 300% auto;
   background-repeat: no-repeat;
 }
@@ -396,6 +396,56 @@ body {
   opacity: 0.5;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
+}
+
+/* ボタン全体のデザイン */
+.scroll-top-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 56px;
+  height: 56px;
+  background-color: #8c6450;
+  /* タピオカ・ブラウン */
+  border-radius: 50%;
+  /* 正円（タピオカ風） */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* 矢印（アイコン部分） */
+.scroll-top-btn .arrow {
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #ffffff;
+  transform: rotate(-45deg);
+  /* 45度回転させて「く」の字を上に向ける */
+  margin-top: 4px;
+}
+
+/* ホバーした時の動き */
+.scroll-top-btn:hover {
+  background-color: #a67c66;
+  /* 少し明るい茶色に */
+  transform: translateY(-5px);
+  /* ぴょこっと上に動く */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 画面幅が狭いスマホでの調整 */
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    width: 48px;
+    height: 48px;
+    right: 15px;
+    bottom: 15px;
+  }
 }
 
 /* --- Responsive --- */
