@@ -197,7 +197,7 @@ body {
   width: 120px;
   height: 120px;
   margin: 0 auto 15px;
-  background-image: url("/img/specialty.jpg");
+  background-image: url("img/specialty.png");
   background-size: 300% auto;
   background-repeat: no-repeat;
 }
