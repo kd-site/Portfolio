@@ -197,7 +197,7 @@ body {
   width: 120px;
   height: 120px;
   margin: 0 auto 15px;
-  background-image: url("img/specialty.png");
+  background-image: url("tapioka/img/specialty.png");
   background-size: 300% auto;
   background-repeat: no-repeat;
 }
@@ -248,7 +248,7 @@ body {
 .section-title {
   font-size: 2rem;
   color: #5d4037;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   letter-spacing: 2px;
 }
 
@@ -445,6 +445,93 @@ body {
     height: 48px;
     right: 15px;
     bottom: 15px;
+  }
+}
+
+/* --- 元のデザイン変数を維持 --- */
+:root {
+  --text-brown: #5d4a3e;
+  --bg-beige: #fdfaf5;
+}
+
+/* --- ハンバーガーメニューの基本設定 --- */
+#nav-input {
+  display: none;
+  /* チェックボックス自体は隠す */
+}
+
+/* PC時はハンバーガーボタンを非表示 */
+.nav-open-btn {
+  display: none;
+}
+
+/* --- スマートフォン用レイアウト (768px以下) --- */
+@media (max-width: 768px) {
+  .nav-open-btn {
+    display: block;
+    position: relative;
+    z-index: 1001;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  /* 三本線の描画 */
+  .nav-open-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-brown);
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  .nav-open-btn span:nth-child(1) {
+    top: 0;
+  }
+
+  .nav-open-btn span:nth-child(2) {
+    top: 11px;
+  }
+
+  .nav-open-btn span:nth-child(3) {
+    bottom: 0;
+  }
+
+  /* ナビゲーションを画面外（右側）へ */
+  .nav-list {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+  }
+
+  /* チェックが入った時（ボタンが押された時）の動き */
+  #nav-input:checked~nav .nav-list {
+    right: 0;
+    /* メニューをスライドイン */
+  }
+
+  /* 三本線を「×」に変形 */
+  #nav-input:checked~.nav-open-btn span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+
+  #nav-input:checked~.nav-open-btn span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #nav-input:checked~.nav-open-btn span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
   }
 }
 
